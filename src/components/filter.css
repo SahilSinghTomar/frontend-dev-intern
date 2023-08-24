@@ -1,0 +1,36 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 2.5rem;
+  height: 5rem;
+  gap: 2rem;
+}
+
+.filter h1 {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.filter select {
+  font-size: 2rem;
+  padding: 0 3rem 0 1.5rem;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.filter select:focus {
+  outline: none;
+}
+
+.filter-button {
+  background-color: transparent;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 2px solid black;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
