@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
 import Pagination from "./Pagination";
+import Loading from "./Loading";
 import "./productlist.css";
 
 const ProductList = () => {
@@ -41,17 +42,33 @@ const ProductList = () => {
     indexOfLastProduct
   );
 
+  const handlePagination = (pageNumber) => {
+    if (pageNumber < 1 || pageNumber > products.length / productsPerPage) {
+      return;
+    }
+
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <>
-      <ul className="product-list">
-        {currentProduct.map((product) => (
-          <Product product={product} key={product.id} />
-        ))}
-      </ul>
-      <Pagination
-        productsPerPage={productsPerPage}
-        totalProducts={products.length}
-      />
+      {!loading ? (
+        <>
+          <ul className="product-list">
+            {currentProduct.map((product) => (
+              <Product product={product} key={product.id} />
+            ))}
+          </ul>
+          <Pagination
+            productsPerPage={productsPerPage}
+            totalProducts={products.length}
+            onPaginate={handlePagination}
+            currentPage={currentPage}
+          />
+        </>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };

@@ -18,3 +18,13 @@
   font-size: 1.7rem;
   cursor: pointer;
 }
+
+.page-selected {
+  background-color: black;
+  color: #fff;
+}
+
+.page-btn {
+  background-color: black;
+  color: #fff;
+}
