@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/frontend-dev-intern/static/css/main.e2055bc3.css",
+    "main.js": "/frontend-dev-intern/static/js/main.ebf3f23f.js",
+    "index.html": "/frontend-dev-intern/index.html",
+    "main.e2055bc3.css.map": "/frontend-dev-intern/static/css/main.e2055bc3.css.map",
+    "main.ebf3f23f.js.map": "/frontend-dev-intern/static/js/main.ebf3f23f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2055bc3.css",
+    "static/js/main.ebf3f23f.js"
+  ]
+}
