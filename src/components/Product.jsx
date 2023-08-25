@@ -22,6 +22,9 @@ const Product = ({ product }) => {
         <p className="product-title">{product.title}</p>
         <p className="product-description">{product.description}</p>
         <p className="product-rating">{product.rating}</p>
+        <p className="product-stocks">
+          <span>{product.stock}</span> stocks left
+        </p>
       </div>
     </li>
   );

@@ -1,39 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Product from "./Product";
 import Pagination from "./Pagination";
 import Loading from "./Loading";
 import "./productlist.css";
 
-const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
+const ProductList = ({ products, loading }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(6);
-
-  useEffect(function getProducts() {
-    async function fetchProduct() {
-      setLoading(true);
-      try {
-        const res = await fetch("https://dummyjson.com/products");
-
-        if (!res.ok) {
-          throw new Error(
-            "Something went Wrong! Check your internet connection and than try again"
-          );
-        }
-
-        const data = await res.json();
-
-        setProducts(data.products);
-      } catch (err) {
-        console.log(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchProduct();
-  }, []);
+  const [productsPerPage] = useState(9);
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -43,7 +16,7 @@ const ProductList = () => {
   );
 
   const handlePagination = (pageNumber) => {
-    if (pageNumber < 1 || pageNumber > products.length / productsPerPage) {
+    if (pageNumber < 1 || pageNumber > products.length / productsPerPage + 1) {
       return;
     }
 
